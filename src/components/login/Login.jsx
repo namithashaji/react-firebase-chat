@@ -123,6 +123,7 @@ const Login = () => {
       toast.error(err.message);
     } finally {
       setLoginLoading(false);
+      window.location.reload();
     }
   };
 
@@ -191,7 +192,6 @@ const Login = () => {
               className="avatar"
             />
             <FaCamera className="input-icon avatar-icon" />
-            Upload an image
           </label>
           <input
             type="file"

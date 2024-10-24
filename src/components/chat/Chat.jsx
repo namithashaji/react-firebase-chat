@@ -8,6 +8,15 @@ import { useUserStore } from "../../lib/userStore";
 import upload from "../../lib/upload";
 import { format } from "timeago.js";
 
+import Avatar from "../../assets/avatar.png";
+import Phone from "../../assets/phone.png";
+import Video from "../../assets/video.png";
+import Info from "../../assets/info.png";
+import Img from "../../assets/img.png";
+import Emoji from "../../assets/emoji.png";
+import Camera from "../../assets/camera.png";
+import Mic from "../../assets/mic.png";
+
 const Chat = () => {
   const [chat, setChat] = useState();
   const [open, setOpen] = useState(false);
@@ -109,16 +118,16 @@ const Chat = () => {
     <div className="chat">
       <div className="top">
         <div className="user">
-          <img src={user?.avatar || "./avatar.png"} alt="" />
+          <img src={user?.avatar || Avatar} alt="Avatar" />
           <div className="texts">
             <span>{user?.username}</span>
             <p>Lorem ipsum dolor, sit amet.</p>
           </div>
         </div>
         <div className="icons">
-          <img src="./phone.png" alt="" />
-          <img src="./video.png" alt="" />
-          <img src="./info.png" alt="" />
+          <img src={Phone} alt="Phone" />
+          <img src={Video} alt="Video" />
+          <img src={Info} alt="Info" />
         </div>
       </div>
       <div className="center">
@@ -148,7 +157,7 @@ const Chat = () => {
       <div className="bottom">
         <div className="icons">
           <label htmlFor="file">
-            <img src="./img.png" alt="" />
+            <img src={Img} alt="Img" />
           </label>
           <input
             type="file"
@@ -156,8 +165,8 @@ const Chat = () => {
             style={{ display: "none" }}
             onChange={handleImg}
           />
-          <img src="./camera.png" alt="" />
-          <img src="./mic.png" alt="" />
+          <img src={Camera} alt="Camera" />
+          <img src={Mic} alt="Mic" />
         </div>
         <input
           type="text"
@@ -172,8 +181,8 @@ const Chat = () => {
         />
         <div className="emoji">
           <img
-            src="./emoji.png"
-            alt=""
+            src={Emoji}
+            alt="Emoji"
             onClick={() => setOpen((prev) => !prev)}
           />
           <div className="picker">

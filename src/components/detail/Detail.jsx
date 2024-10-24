@@ -3,6 +3,10 @@ import { useChatStore } from "../../lib/chatStore";
 import { auth, db } from "../../lib/firebase";
 import { useUserStore } from "../../lib/userStore";
 import "./detail.css";
+import Avatar from "../../assets/avatar.png";
+import ArrowUp from "../../assets/arrowUp.png";
+import ArrowDown from "../../assets/arrowDown.png";
+import Download from "../../assets/download.png";
 
 const Detail = () => {
   const { chatId, user, isCurrentUserBlocked, isReceiverBlocked, changeBlock, resetChat } =
@@ -32,7 +36,7 @@ const Detail = () => {
   return (
     <div className="detail">
       <div className="user">
-        <img src={user?.avatar || "./avatar.png"} alt="" />
+        <img src={user?.avatar || Avatar} alt={`Avatar of ${user?.username}`} />
         <h2>{user?.username}</h2>
         <p>Lorem ipsum dolor sit amet.</p>
       </div>
@@ -40,25 +44,25 @@ const Detail = () => {
         <div className="option">
           <div className="title">
             <span>Chat Settings</span>
-            <img src="./arrowUp.png" alt="" />
+            <img src={ArrowDown} alt="Arrow Down" />
           </div>
         </div>
         <div className="option">
           <div className="title">
             <span>Chat Settings</span>
-            <img src="./arrowUp.png" alt="" />
+            <img src={ArrowUp} alt="Arrow Up" />
           </div>
         </div>
         <div className="option">
           <div className="title">
             <span>Privacy & help</span>
-            <img src="./arrowUp.png" alt="" />
+            <img src={ArrowUp} alt="Arrow Up" />
           </div>
         </div>
         <div className="option">
           <div className="title">
             <span>Shared photos</span>
-            <img src="./arrowDown.png" alt="" />
+            <img src={ArrowDown} alt="Arrow Down" />
           </div>
           <div className="photos">
             <div className="photoItem">
@@ -89,7 +93,7 @@ const Detail = () => {
                 />
                 <span>photo_2024_2.png</span>
               </div>
-              <img src="./download.png" alt="" className="icon" />
+              <img src={Download} alt="Download" className="icon" />
             </div>
             <div className="photoItem">
               <div className="photoDetail">
@@ -99,14 +103,14 @@ const Detail = () => {
                 />
                 <span>photo_2024_2.png</span>
               </div>
-              <img src="./download.png" alt="" className="icon" />
+              <img src={Download} alt="Download" className="icon" />
             </div>
           </div>
         </div>
         <div className="option">
           <div className="title">
             <span>Shared Files</span>
-            <img src="./arrowUp.png" alt="" />
+            <img src={ArrowUp} alt="Arrow Up" />
           </div>
         </div>
         <button onClick={handleBlock}>

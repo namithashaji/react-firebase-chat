@@ -17,7 +17,7 @@ const App = () => {
     const unSub = onAuthStateChanged(auth, (user) => {
       fetchUserInfo(user?.uid);
     });
-
+    
     return () => {
       unSub();
     };
