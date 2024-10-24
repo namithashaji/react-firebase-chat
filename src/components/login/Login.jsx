@@ -8,6 +8,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "fire
 import { auth, db } from "../../lib/firebase";
 import { doc, setDoc, collection, query, where, getDocs } from "firebase/firestore";
 import upload from "../../lib/upload";
+import Avatar from "../../assets/avatar.png";
 
 // Motion animations
 const containerVariants = {
@@ -186,7 +187,7 @@ const Login = () => {
         <form onSubmit={handleRegister}>
           <label htmlFor="file" className="avatar-label">
             <motion.img
-              src={avatar.url || "./src/assets/avatar.png"}
+              src={avatar.url || Avatar}
               alt="avatar"
               whileHover={{ scale: 1.1, rotate: 10 }}
               className="avatar"
